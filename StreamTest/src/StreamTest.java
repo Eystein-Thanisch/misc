@@ -30,6 +30,7 @@ public class StreamTest {
         }
 
         System.out.println("Serial product: " + serialProductSet);
+        System.out.println("Set size: " + serialProductSet.size());
 
         Set<Double> parallelProductSet = new HashSet<>();
 
@@ -41,6 +42,7 @@ public class StreamTest {
         }
 
         System.out.println("Parallel product: " + parallelProductSet);
+        System.out.println("Set size: " + parallelProductSet.size());
 
         System.out.println();
 
@@ -61,6 +63,7 @@ public class StreamTest {
         }
 
         System.out.println("Serial product: " + serialProductSet);
+        System.out.println("Set size: " + serialProductSet.size());
 
         Set<Double> parallelProductSet = new HashSet<>();
 
@@ -71,6 +74,7 @@ public class StreamTest {
         }
 
         System.out.println("Parallel product: " + parallelProductSet);
+        System.out.println("Set size: " + parallelProductSet.size());
 
         System.out.println();
 
@@ -93,6 +97,7 @@ public class StreamTest {
         }
 
         System.out.println("Serial sum: " + serialSumSet);
+        System.out.println("Set size: " + serialSumSet.size());
 
         Set<Double> parallelSumSet = new HashSet<>();
 
@@ -104,6 +109,7 @@ public class StreamTest {
         }
 
         System.out.println("Parallel sum: " + parallelSumSet);
+        System.out.println("Set size: " + parallelSumSet.size());
 
         System.out.println();
 
@@ -124,16 +130,18 @@ public class StreamTest {
         }
 
         System.out.println("Serial sum: " + serialSumSet);
+        System.out.println("Set size: " + serialSumSet.size());
 
-        Set<Double> parallelProductSet = new HashSet<>();
+        Set<Double> parallelSumSet = new HashSet<>();
 
         for (int j = 0; j < 1000; j++) {
             var wrapper = new Object(){Double serialProduct = 1.0;};
             randomDoubles.parallelStream().forEach(x -> {wrapper.serialProduct += x;});
-            parallelProductSet.add(wrapper.serialProduct);
+            parallelSumSet.add(wrapper.serialProduct);
         }
 
-        System.out.println("Parallel sum: " + parallelProductSet);
+        System.out.println("Parallel sum: " + parallelSumSet);
+        System.out.println("Set size: " + parallelSumSet.size());
 
         System.out.println();
 
