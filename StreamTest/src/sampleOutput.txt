@@ -1,3 +1,12 @@
+Each test is run on a different list of 20 randomly generated doubles. The product or sum is generated 1000 times
+each using serial and parallel streams and, each time, the result is added to a set. The result sets are presented
+below.
+
+Tests marked "reduce" use the reduce operation within the stream.
+
+Tests marked "forEach" update an external variable by adding or multiplying that variable by each element in
+the input list.
+
 ---Test 1: Product of Doubles (reduce)---
 Serial product: [2.64010365583229E-9]
 Set size: 1
