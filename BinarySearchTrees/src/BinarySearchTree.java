@@ -58,10 +58,18 @@ public class BinarySearchTree {
     }
 
     public static void main(String[] args) {
+        System.out.println("---Test 1---");
         int[] testArray1 = {6, 3, 9, 2, 10};
-        BinarySearchTree tree = new BinarySearchTree(testArray1);
-        System.out.println(tree.getPath(2));
-        System.out.println(tree.getPath(10));
+        BinarySearchTree tree1 = new BinarySearchTree(testArray1);
+        System.out.println(tree1.getPath(2));
+        System.out.println(tree1.getPath(10));
+
+        System.out.println("---Test 2---");
+        int[] testArray2 = {23, 15, 43, 14, 42, 16, 38, 10, 32, 9, 8, 7, 55, 29, 2, 1};
+        BinarySearchTree tree2 = new BinarySearchTree(testArray2);
+        System.out.println(tree2.getPath(2));
+        System.out.println(tree2.getPath(10));
+        System.out.println(tree2.getPath(55));
     }
 
 
