@@ -43,6 +43,9 @@ public class SimpleTree {
         if (rootNode.datum == val) {
             output += rootNode.toString();
         }
+        else if (rootNode == null) {
+            output += "NODE NOT FOUND";
+        }
         else {
             output += rootNode.toString() + " -> ";
             if (val < rootNode.datum) {
@@ -53,6 +56,30 @@ public class SimpleTree {
             }
         }
         return output;
+    }
+
+    public void insertNode(int val) {
+        Node treeNode = new Node(val);
+        addNode(treeNode,this.root);
+    }
+
+    private void addNode(Node treeNode, Node rootNode) {
+        if (treeNode.datum < rootNode.datum) {
+            if (rootNode.leftChild == null) {
+                rootNode.setLeftChild(treeNode);
+            }
+            else {
+                addNode(treeNode, rootNode.leftChild);
+            }
+        }
+        else {
+            if (rootNode.rightChild == null) {
+                rootNode.setRightChild(treeNode);
+            }
+            else {
+                addNode(treeNode, rootNode.rightChild);
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -68,6 +95,12 @@ public class SimpleTree {
         System.out.println(tree2.getPath(2));
         System.out.println(tree2.getPath(10));
         System.out.println(tree2.getPath(55));
+
+        System.out.println("---Test 3---");
+        System.out.println("Adding 56...");
+        tree2.insertNode(56);
+        System.out.println(tree2.getPath(56));
+
     }
 
 
