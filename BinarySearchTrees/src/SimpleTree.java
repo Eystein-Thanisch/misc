@@ -44,7 +44,7 @@ public class SimpleTree {
             output += rootNode.toString();
         }
         else if (rootNode == null) {
-            output += "NODE NOT FOUND";
+            reportNotFound();
         }
         else {
             output += rootNode.toString() + " -> ";
@@ -80,6 +80,10 @@ public class SimpleTree {
                 addNode(treeNode, rootNode.rightChild);
             }
         }
+    }
+
+    private void reportNotFound() {
+        System.out.println("NODE NOT FOUND");
     }
 
     public static void main(String[] args) {
