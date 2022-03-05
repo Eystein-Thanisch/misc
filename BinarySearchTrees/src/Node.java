@@ -1,11 +1,13 @@
 public class Node {
 
-    int data;
+    int datum;
     Node leftChild;
     Node rightChild;
 
-    public Node(int data) {
-        this.data = data;
+    public Node(int datum) {
+        this.datum = datum;
+        this.leftChild = null;
+        this.rightChild = null;
     }
 
     public void setLeftChild(Node leftChild) {
@@ -14,6 +16,11 @@ public class Node {
 
     public void setRightChild(Node rightChild) {
         this.leftChild = rightChild;
+    }
+
+    @Override
+    public String toString() {
+        return Integer.toString(this.datum);
     }
 
 }
