@@ -15,7 +15,7 @@ public class Node {
     }
 
     public void setRightChild(Node rightChild) {
-        this.leftChild = rightChild;
+        this.rightChild = rightChild;
     }
 
     @Override
