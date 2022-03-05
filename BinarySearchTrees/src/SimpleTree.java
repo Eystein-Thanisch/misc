@@ -100,6 +100,10 @@ public class SimpleTree {
         System.out.println("Adding 56...");
         tree2.insertNode(56);
         System.out.println(tree2.getPath(56));
+        System.out.println("Adding 14...");
+        tree2.insertNode(13);
+        System.out.println(tree2.getPath(13));
+        System.out.println(tree2.getPath(14));
 
     }
 
