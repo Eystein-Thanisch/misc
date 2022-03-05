@@ -1,11 +1,9 @@
-import java.lang.reflect.Array;
-
-public class BinarySearchTree {
+public class SimpleTree {
 
     Node root = null;
 
     // This currently assumes an array of ints without duplicates
-    public BinarySearchTree(int[] data) {
+    public SimpleTree(int[] data) {
         for(int i = 0; i< data.length; i++) {
             Node treeNode = new Node(data[i]);
             if (i == 0) {
@@ -60,13 +58,13 @@ public class BinarySearchTree {
     public static void main(String[] args) {
         System.out.println("---Test 1---");
         int[] testArray1 = {6, 3, 9, 2, 10};
-        BinarySearchTree tree1 = new BinarySearchTree(testArray1);
+        SimpleTree tree1 = new SimpleTree(testArray1);
         System.out.println(tree1.getPath(2));
         System.out.println(tree1.getPath(10));
 
         System.out.println("---Test 2---");
         int[] testArray2 = {23, 15, 43, 14, 42, 16, 38, 10, 32, 9, 8, 7, 55, 29, 2, 1};
-        BinarySearchTree tree2 = new BinarySearchTree(testArray2);
+        SimpleTree tree2 = new SimpleTree(testArray2);
         System.out.println(tree2.getPath(2));
         System.out.println(tree2.getPath(10));
         System.out.println(tree2.getPath(55));
