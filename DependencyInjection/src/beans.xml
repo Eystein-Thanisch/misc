@@ -5,13 +5,8 @@
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="joyceQuote" class="quotes.Container">
-        <property name="contentProvider" ref="joyce" />
-    </bean>
-    <bean id="goodmanQuote" class="quotes.Container">
-        <property name="contentProvider" ref="goodman" />
-    </bean>
-    <bean id="goodman" class="quotes.GoodmanQuote" />
-    <bean id="joyce" class="quotes.JoyceQuote" />
+    <bean id="factory" class="quotes.ContainerFactory"/>
+    <bean id="joyceQuote" factory-bean="factory" factory-method="createJoyceContainerInstance"/>
+    <bean id="goodmanQuote" factory-bean="factory" factory-method="createGoodmanContainerInstance"/>
 
 </beans>
