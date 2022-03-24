@@ -5,9 +5,13 @@
 		http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
-    <bean id="quote" class="quotes.Container">
-        <property name="contentProvider" ref="provider" />
+    <bean id="joyceQuote" class="quotes.Container">
+        <property name="contentProvider" ref="joyce" />
     </bean>
-    <bean id="provider" class="quotes.GoodmanQuote" />
+    <bean id="goodmanQuote" class="quotes.Container">
+        <property name="contentProvider" ref="goodman" />
+    </bean>
+    <bean id="goodman" class="quotes.GoodmanQuote" />
+    <bean id="joyce" class="quotes.JoyceQuote" />
 
 </beans>

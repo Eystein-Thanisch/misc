@@ -7,7 +7,9 @@ public class Main {
 
     public static void main(String[] args) {
         BeanFactory factory = new ClassPathXmlApplicationContext("/beans.xml");
-        Container testContainer = factory.getBean("quote",Container.class);
+        Container testContainer = factory.getBean("goodmanQuote",Container.class);
+        System.out.println(testContainer.getContent());
+        testContainer = factory.getBean("joyceQuote",Container.class);
         System.out.println(testContainer.getContent());
     }
 
