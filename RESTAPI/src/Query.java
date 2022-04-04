@@ -32,8 +32,12 @@ public class Query {
         }
     }
 
-    public static void main(String[] args) throws UnirestException, JSONException {
-        executeQuery(args[0]);
+    public static void main(String[] args) {
+        try {
+            executeQuery(args[0]);
+        } catch (UnirestException | JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 }
