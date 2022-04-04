@@ -1,4 +1,3 @@
-import java.io.IOException;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
@@ -10,7 +9,7 @@ import org.json.JSONObject;
 
 public class Query {
 
-    public static void executeQuery(String country) throws IOException, UnirestException, JSONException {
+    public static void executeQuery(String country) throws UnirestException, JSONException {
         /* Sets up connection using user-supplied country code */
         String url = String.format("https://ghoapi.azureedge.net/api/SUNBEDREG_ACCESS?$filter=SpatialDim%%20eq%%20%%27%s%%27",country);
         HttpResponse<JsonNode> jResp = Unirest
@@ -33,7 +32,7 @@ public class Query {
         }
     }
 
-    public static void main(String[] args) throws UnirestException, IOException, JSONException {
+    public static void main(String[] args) throws UnirestException, JSONException {
         executeQuery(args[0]);
     }
 
