@@ -11,13 +11,17 @@ import org.json.JSONObject;
 public class Query {
 
     public static void executeQuery(String country) throws IOException, UnirestException, JSONException {
+        /* Sets up connection using user-supplied country code */
         String url = String.format("https://ghoapi.azureedge.net/api/SUNBEDREG_ACCESS?$filter=SpatialDim%%20eq%%20%%27%s%%27",country);
         HttpResponse<JsonNode> jResp = Unirest
                                         .get(url)
                                         .asJson();
+        /* Receives JSON payload and accesses data */
         JSONObject jObj = jResp.getBody().getObject();
         JSONArray jData = (JSONArray) jObj.get("value");
+        /* Notifies user if data unavailable for specified country */
         if (jData.length() == 0) System.out.println("No data on sunbed regulation available for this country.");
+        /* Otherwise, iterates through data and returns summary */
         else {
             for (int i = 0; i < jData.length(); i++) {
                 JSONObject dim = (JSONObject) jData.get(i);
